@@ -25,3 +25,16 @@ func max(a, b int) int {
 	}
 	return b
 }
+
+// 分治法
+func maxDepth2(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := maxDepth(root.Left)
+	right := maxDepth(root.Right)
+	if left > right {
+		return left + 1
+	}
+	return right + 1
+}
